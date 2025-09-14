@@ -55,7 +55,8 @@ for link in links:
     except requests.exceptions.RequestException as e:
         print(f"Error in download because of {e} .")
     
-    finally:
-        print("Sincerly,\nMade by Mahdi Mohammadkhani:)")
+
+print("Sincerly,\nMade by Mahdi Mohammadkhani:)")
     
+
 
