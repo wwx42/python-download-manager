@@ -15,7 +15,7 @@ import sys
 
 # ---------------- configuration ----------------
 # Folder where downloads will be saved
-DOWNLOAD_FOLDER = "C:/Users/Mahdi/Downloads"  # Change to your desired path
+DOWNLOAD_FOLDER = input("Enter download directory: ")
 os.makedirs(DOWNLOAD_FOLDER, exist_ok=True)
 
 # ---------------- helper functions ----------------
