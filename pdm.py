@@ -32,6 +32,7 @@ def get_filename_from_url(url: str) -> str:
 # ---------------- main program ----------------
 def main():
     links = []
+    files = []
 
     # Step 1: Collect download links from user
     while True:
@@ -50,6 +51,7 @@ def main():
     for link in links:
         filename = get_filename_from_url(link)
         filepath = os.path.join(DOWNLOAD_FOLDER, filename)
+        files.append(filename)
         print(f"⬇️  {filename} is downloading...")
 
         try:
@@ -73,6 +75,10 @@ def main():
 
         except requests.exceptions.RequestException as e:
             print(f"❌ Error downloading {filename}: {e}")
+
+    print("Files have downloaded!")
+    for n,file in enumerate(files, start=1):
+        print(f"{n}. {file}")
 
     print("Sincerely,\nMade by Mahdi Mohammadkhani :)")
 
