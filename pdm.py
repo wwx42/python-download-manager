@@ -51,7 +51,7 @@ def main():
     for link in links:
         filename = get_filename_from_url(link)
         filepath = os.path.join(DOWNLOAD_FOLDER, filename)
-        files.append(filename)
+        
         print(f"⬇️  {filename} is downloading...")
 
         try:
@@ -71,6 +71,7 @@ def main():
                                 progress_bar.update(len(chunk))
 
             print(f"✅ {filename} download completed.\n")
+            files.append(filename)
             clear_terminal()
 
         except requests.exceptions.RequestException as e:
